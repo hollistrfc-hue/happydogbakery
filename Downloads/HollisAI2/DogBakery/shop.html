@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order a Cake — Happy Dog Barkery & Boutique</title>
+  <meta name="description" content="Order a custom dog birthday cake from Happy Dog Barkery in Stillwater, OK. Fresh baked in-store daily. Choose your size, frosting, and siding." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Happy Dog Barkery Home">
+        <img src="images/HappyDog_Logo_White.jpg" alt="Happy Dog Barkery & Boutique" />
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="shop.html" class="btn">Order Now</a>
+      </div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="shop.html">Shop</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="shop.html" class="btn btn-gold">Order Now</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero has-photo" style="--hero-img: url('images/IMG_3703.jpeg');">
+    <div>
+      <span class="eyebrow">Baked Fresh In-Store</span>
+      <h1>Custom Dog Cakes</h1>
+      <p>Made to order, right here in Stillwater. Pick your size, frosting, and siding — we'll handle the rest.</p>
+    </div>
+  </div>
+
+  <!-- CAKE ORDER SECTION -->
+  <section class="section" style="background: var(--white);">
+    <div class="container">
+
+      <!-- Success banner -->
+      <div class="form-success-banner" id="cake-success-banner" style="display:none;">
+        <strong id="cake-success-heading">Cake order received!</strong><br>
+        <span id="cake-success-msg">We'll confirm via text or email. To complete your order, please Venmo <strong>@HappyDogBarkery</strong> the total for your cake size. Orders are not confirmed until payment is received.</span>
+      </div>
+
+      <div class="cake-order-layout">
+
+        <!-- Left: info -->
+        <div class="cake-info-col fade-up">
+          <div class="cake-photo-wrap">
+            <img src="images/IMG_3703.jpeg" alt="Custom dog birthday cake baked at Happy Dog Barkery" />
+          </div>
+
+          <div class="cake-detail-block">
+            <h3>Sizes &amp; Pricing</h3>
+            <ul class="cake-option-list">
+              <li><span class="cake-opt-name">3&rdquo; Round</span><span class="cake-opt-price">$15</span></li>
+              <li><span class="cake-opt-name">5&rdquo; Round</span><span class="cake-opt-price">$27</span></li>
+              <li><span class="cake-opt-name">Small Bone</span><span class="cake-opt-price">$25</span></li>
+              <li><span class="cake-opt-name">Large Bone</span><span class="cake-opt-price">$35</span></li>
+            </ul>
+          </div>
+
+          <div class="cake-detail-block">
+            <h3>Frosting Flavors</h3>
+            <ul class="cake-option-tags">
+              <li>Peanut Butter</li>
+              <li>Carob</li>
+              <li>Vanilla</li>
+              <li>Custom Color <span style="font-size:0.75rem; opacity:0.7;">(upon request)</span></li>
+            </ul>
+          </div>
+
+          <div class="cake-detail-block">
+            <h3>Siding / Coating</h3>
+            <ul class="cake-option-tags">
+              <li>Peanuts</li>
+              <li>Carob Crumbs</li>
+              <li>Coconut</li>
+            </ul>
+          </div>
+
+          <div class="cake-venmo-notice">
+            <strong>Payment required to confirm.</strong> After submitting your order, Venmo <strong>@HappyDogBarkery</strong> the amount for your cake size. We'll reach out to confirm once payment is received.
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="cake-form-col fade-up">
+          <h2 style="margin-bottom:6px;">Place Your Order</h2>
+          <p style="margin-bottom:28px; font-size:0.95rem;">Fill out the form below. We'll confirm via text or email — payment via Venmo locks in your spot.</p>
+
+          <form
+            name="cake-order"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            id="cake-form"
+          >
+            <input type="hidden" name="form-name" value="cake-order" />
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="ck-name">Your Name *</label>
+                <input type="text" id="ck-name" name="name" placeholder="Full name" required />
+              </div>
+              <div class="form-group">
+                <label for="ck-pet">Pet's Name *</label>
+                <input type="text" id="ck-pet" name="pet_name" placeholder="e.g. Biscuit" required />
+              </div>
+              <div class="form-group">
+                <label for="ck-phone">Phone *</label>
+                <input type="tel" id="ck-phone" name="phone" placeholder="(405) 555-0100" required />
+              </div>
+              <div class="form-group">
+                <label for="ck-email">Email *</label>
+                <input type="email" id="ck-email" name="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="ck-size">Cake Size *</label>
+                <select id="ck-size" name="cake_size" required>
+                  <option value="">Select a size</option>
+                  <option value='3" Round — $15'>3&rdquo; Round &mdash; $15</option>
+                  <option value='5" Round — $27'>5&rdquo; Round &mdash; $27</option>
+                  <option value="Small Bone — $25">Small Bone &mdash; $25</option>
+                  <option value="Large Bone — $35">Large Bone &mdash; $35</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ck-frosting">Frosting Flavor *</label>
+                <select id="ck-frosting" name="frosting" required>
+                  <option value="">Select frosting</option>
+                  <option value="Peanut Butter">Peanut Butter</option>
+                  <option value="Carob">Carob</option>
+                  <option value="Vanilla">Vanilla</option>
+                  <option value="Custom Color (upon request)">Custom Color (upon request)</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="ck-siding">Siding / Coating *</label>
+                <select id="ck-siding" name="siding" required>
+                  <option value="">Select siding</option>
+                  <option value="Peanuts">Peanuts</option>
+                  <option value="Carob Crumbs">Carob Crumbs</option>
+                  <option value="Coconut">Coconut</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="ck-message">Custom Message on Cake</label>
+                <input type="text" id="ck-message" name="cake_message" placeholder="e.g. Happy Birthday Biscuit!" maxlength="60" />
+              </div>
+              <div class="form-group full">
+                <label for="ck-pickup">Preferred Pickup Date &amp; Time *</label>
+                <input type="datetime-local" id="ck-pickup" name="pickup_datetime" required />
+                <span id="ck-pickup-error" style="display:none; color:#c0392b; font-size:0.82rem; font-weight:600; letter-spacing:0; text-transform:none; margin-top:5px;">Please choose a pickup time at least 2 hours from now.</span>
+              </div>
+              <div class="form-group full">
+                <label for="ck-notes">Special Requests / Notes</label>
+                <textarea id="ck-notes" name="notes" placeholder="Allergies, decoration ideas, anything else we should know..." style="min-height:100px;"></textarea>
+              </div>
+              <div class="form-group full form-submit">
+                <button type="submit" class="btn btn-brown" id="cake-submit-btn" style="width:100%; padding:15px; font-size:0.95rem;">Place Cake Order</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><img src="images/HappyDog_Logo_White.jpg" alt="Happy Dog Barkery & Boutique" /></div>
+          <p class="footer-brand-text">Stillwater's one stop pup shop. Fresh baked treats, boutique, grooming, and self-wash.</p>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener" class="footer-fb-link">
+            <span style="width:18px;height:18px;background:#1877F2;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:900;color:#fff;">f</span>
+            Facebook
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon – Sat: 10am – 7pm</li>
+            <li>Sunday: 12pm – 5pm</li>
+            <li><a href="tel:+14057142971">(405) 714-2971</a></li>
+            <li><a href="mailto:happydogbarkeryboutique@gmail.com" style="word-break:break-all;">happydogbarkeryboutique@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Find Us</h4>
+          <ul>
+            <li>316 N Main Street, Suite 5</li>
+            <li>Stillwater, OK 74074</li>
+            <li><a href="contact.html">Get Directions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Happy Dog Barkery &amp; Boutique. All rights reserved.</span>
+        <span class="nova-credit">Site by <a href="https://www.novabuildweb.com" target="_blank" rel="noopener">NovaBuild LLC</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

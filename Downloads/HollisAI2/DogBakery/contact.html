@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Happy Dog Barkery & Boutique</title>
+  <meta name="description" content="Contact Happy Dog Barkery & Boutique in Stillwater, OK. Visit us at 316 N Main Street, Suite 5." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Happy Dog Barkery Home">
+        <img src="images/HappyDog_Logo_White.jpg" alt="Happy Dog Barkery & Boutique" />
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="shop.html" class="btn">Order Now</a>
+      </div>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="shop.html">Shop</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="shop.html" class="btn btn-gold">Order Now</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <span class="eyebrow">We'd Love to Hear from You</span>
+    <h1>Get in Touch</h1>
+    <p>Questions about orders, grooming, hours, or anything else — we're here.</p>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="section" style="background: var(--white);">
+    <div class="container">
+
+      <div class="form-success-banner" id="contact-success-banner">
+        <strong>Message received!</strong><br>
+        Thanks for reaching out — we'll get back to you soon. In the meantime, come see us on Main Street.
+      </div>
+
+      <div class="contact-layout">
+
+        <!-- Info column -->
+        <div class="fade-up">
+          <span class="eyebrow">Find Us</span>
+          <h2 style="margin-bottom:8px;">Come See Us<br>on Main Street</h2>
+          <div class="divider"></div>
+
+          <div class="contact-info-item">
+            <div class="ci-box">Loc</div>
+            <div>
+              <span class="ci-label">Address</span>
+              <span class="ci-value">316 N Main Street, Suite 5<br>Stillwater, OK 74074</span>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-box">Hrs</div>
+            <div>
+              <span class="ci-label">Hours</span>
+              <span class="ci-value">Mon – Sat: 10am – 7pm<br>Sunday: 12pm – 5pm</span>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-box">Ph</div>
+            <div>
+              <span class="ci-label">Phone</span>
+              <span class="ci-value"><a href="tel:+14057142971">(405) 714-2971</a></span>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="ci-box">Em</div>
+            <div>
+              <span class="ci-label">Email</span>
+              <span class="ci-value"><a href="mailto:happydogbarkeryboutique@gmail.com">happydogbarkeryboutique@gmail.com</a></span>
+            </div>
+          </div>
+
+          <a href="https://www.facebook.com" target="_blank" rel="noopener" class="facebook-link">
+            <span class="fb-icon">f</span>
+            Find Us on Facebook
+          </a>
+
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3211.6!2d-97.0584!3d36.1156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b20c9aeb1af6d7%3A0x1e2a3b4c5d6e7f8a!2s316%20N%20Main%20St%2C%20Stillwater%2C%20OK%2074074!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              width="100%"
+              height="280"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Happy Dog Barkery location"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Form column -->
+        <div class="form-wrap fade-up">
+          <h3 style="margin-bottom:6px;">Send Us a Message</h3>
+          <p style="margin-bottom:28px; font-size:0.93rem;">We'll get back to you within one business day.</p>
+
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="contact.html?success=true"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="c-name">Your Name *</label>
+                <input type="text" id="c-name" name="name" placeholder="Full name" required />
+              </div>
+              <div class="form-group">
+                <label for="c-phone">Phone</label>
+                <input type="tel" id="c-phone" name="phone" placeholder="(405) 555-0100" />
+              </div>
+              <div class="form-group full">
+                <label for="c-email">Email *</label>
+                <input type="email" id="c-email" name="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group full">
+                <label for="c-message">Message *</label>
+                <textarea id="c-message" name="message" placeholder="Ask us about treats, grooming, custom orders, or anything else." required style="min-height:150px;"></textarea>
+              </div>
+              <div class="form-group full form-submit">
+                <button type="submit" class="btn btn-brown">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo"><img src="images/HappyDog_Logo_White.jpg" alt="Happy Dog Barkery & Boutique" /></div>
+          <p class="footer-brand-text">Stillwater's one stop pup shop. Fresh baked treats, boutique, grooming, and self-wash.</p>
+          <a href="https://www.facebook.com" target="_blank" rel="noopener" class="footer-fb-link">
+            <span style="width:18px;height:18px;background:#1877F2;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:900;color:#fff;">f</span>
+            Facebook
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li>Mon – Sat: 10am – 7pm</li>
+            <li>Sunday: 12pm – 5pm</li>
+            <li><a href="tel:+14057142971">(405) 714-2971</a></li>
+            <li><a href="mailto:happydogbarkeryboutique@gmail.com" style="word-break:break-all;">happydogbarkeryboutique@gmail.com</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Find Us</h4>
+          <ul>
+            <li>316 N Main Street, Suite 5</li>
+            <li>Stillwater, OK 74074</li>
+            <li><a href="contact.html">Get Directions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Happy Dog Barkery &amp; Boutique. All rights reserved.</span>
+        <span class="nova-credit">Site by <a href="https://www.novabuildweb.com" target="_blank" rel="noopener">NovaBuild LLC</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
