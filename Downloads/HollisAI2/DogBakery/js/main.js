@@ -66,6 +66,13 @@
   const pickupInput = document.getElementById('ck-pickup');
   const pickupError = document.getElementById('ck-pickup-error');
 
+  const squareLinks = {
+    '3" Round — $15':   'https://square.link/u/T5KVBE4c',
+    '5" Round — $27':   'https://square.link/u/NO988bn6',
+    'Small Bone — $25': 'https://square.link/u/skpMuIfg',
+    'Large Bone — $35': 'https://square.link/u/ulN3JrlM'
+  };
+
   if (cakeForm && pickupInput) {
     function updatePickupMin() {
       const minTime = new Date(Date.now() + 2 * 60 * 60 * 1000);
@@ -89,8 +96,13 @@
       if (pickupError) pickupError.style.display = 'none';
 
       const petName   = (document.getElementById('ck-pet')  || {}).value || 'your pup';
+      const sizeEl    = document.getElementById('ck-size');
+      const cakeSize  = sizeEl ? sizeEl.value : '';
+      const squareUrl = squareLinks[cakeSize];
       const submitBtn = document.getElementById('cake-submit-btn');
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+      if (squareUrl) window.open(squareUrl, '_blank');
 
       fetch('/', {
         method: 'POST',
@@ -100,7 +112,9 @@
         .then(() => {
           const banner  = document.getElementById('cake-success-banner');
           const heading = document.getElementById('cake-success-heading');
-          if (heading) heading.textContent = `Cake order received for ${petName}!`;
+          const msg     = document.getElementById('cake-success-msg');
+          if (heading) heading.textContent = `\uD83C\uDF82 Cake order received for ${petName}!`;
+          if (msg) msg.textContent = "We'll confirm your order via text or email. Please complete payment in the new tab that just opened.";
           if (banner)  { banner.style.display = 'block'; banner.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
           cakeForm.reset();
           if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Place Cake Order'; }
@@ -131,8 +145,7 @@
   if (qs.includes('cake=true')) {
     const banner = document.getElementById('order-success-banner');
     if (banner) {
-      banner.querySelector('strong').textContent = 'Cake order received!';
-      banner.innerHTML = '<strong>Cake order received!</strong><br>We\'ll confirm via text. Payment via Venmo (@HappyDogBarkery) is due at pickup.';
+      banner.innerHTML = '<strong>Cake order received!</strong><br>We\'ll confirm via text or email. Payment processed securely via Square.';
       banner.style.display = 'block';
       banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
