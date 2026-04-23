@@ -59,15 +59,15 @@
   const cakeSizeMap = {
     '3in':   '3" Round \u2014 $15',
     '5in':   '5" Round \u2014 $27',
-    'sbone': 'Small Bone \u2014 $25',
-    'lbone': 'Large Bone \u2014 $35'
+    'sbone': 'Small Bone-Shaped \u2014 $25',
+    'lbone': 'Large Bone-Shaped \u2014 $35'
   };
 
   const squareLinks = {
-    '3" Round \u2014 $15':   'https://square.link/u/T5KVBE4c',
-    '5" Round \u2014 $27':   'https://square.link/u/NO988bn6',
-    'Small Bone \u2014 $25': 'https://square.link/u/skpMuIfg',
-    'Large Bone \u2014 $35': 'https://square.link/u/ulN3JrlM'
+    '3" Round \u2014 $15':          'https://square.link/u/T5KVBE4c',
+    '5" Round \u2014 $27':          'https://square.link/u/NO988bn6',
+    'Small Bone-Shaped \u2014 $25': 'https://square.link/u/skpMuIfg',
+    'Large Bone-Shaped \u2014 $35': 'https://square.link/u/ulN3JrlM'
   };
 
   /* ── Open cake modal with pre-selected size ── */
@@ -143,10 +143,10 @@
           if (formWrap)   formWrap.style.display      = 'none';
           if (successDiv) successDiv.style.display    = 'block';
           cakeForm.reset();
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Place Cake Order & Pay'; }
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Place Order & Pay'; }
         })
         .catch(() => {
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Place Cake Order & Pay'; }
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Place Order & Pay'; }
           alert('Something went wrong \u2014 please call us at (405) 714-2971 to place your order.');
         });
     });
