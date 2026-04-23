@@ -433,17 +433,6 @@ p  { color: var(--text-mid); font-size: 1rem; line-height: 1.78; }
   color: var(--text);
 }
 
-.cake-venmo-notice {
-  background: var(--off-white);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
-  border-radius: var(--radius-sm);
-  padding: 14px 18px;
-  font-size: 0.875rem;
-  color: var(--text-mid);
-  line-height: 1.6;
-}
-
 /* ── Shop photo banner ── */
 .shop-photo-banner {
   position: relative;
@@ -537,6 +526,158 @@ p  { color: var(--text-mid); font-size: 1rem; line-height: 1.78; }
 .product-footer    { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); }
 .product-price     { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--brown); }
 .product-footer .btn { padding: 9px 18px; font-size: 0.78rem; }
+
+/* ── Shop Category Cards ── */
+.shop-cat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.shop-cat-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--green);
+  border-radius: var(--radius-lg);
+  padding: 48px 44px;
+  color: var(--white);
+  text-decoration: none;
+  transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
+}
+.shop-cat-card:hover {
+  background: var(--green-light);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+.shop-cat-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+.shop-cat-title {
+  color: var(--white);
+  font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+  margin-bottom: 12px;
+}
+.shop-cat-desc {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.97rem;
+  margin-bottom: 28px;
+  flex: 1;
+  line-height: 1.7;
+}
+.shop-cat-cta {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  transition: color var(--ease);
+}
+.shop-cat-card:hover .shop-cat-cta { color: #e8d888; }
+
+/* ── Shop Product Cards (Cakes) ── */
+.shop-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.shop-product-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+.shop-product-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.spc-img {
+  height: 220px;
+  overflow: hidden;
+  background: var(--off-white);
+}
+.spc-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.shop-product-card:hover .spc-img img,
+.bone-card:hover .spc-img img { transform: scale(1.05); }
+.spc-body {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.spc-name {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.spc-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--green);
+  display: block;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+.spc-desc {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  margin-bottom: 20px;
+  flex: 1;
+  line-height: 1.65;
+}
+.spc-body .btn {
+  width: 100%;
+  justify-content: center;
+  padding: 13px;
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Bones Section ── */
+.bones-secure-note {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--green);
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  margin-bottom: 32px;
+}
+.bones-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.bone-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--ease), transform var(--ease);
+}
+.bone-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.bone-card .spc-img { height: 260px; }
+.bone-card .spc-body { padding: 32px; }
+.bone-card .spc-price { font-size: 2.6rem; }
 
 /* ── Order Modal ── */
 .modal-overlay {
@@ -795,9 +936,11 @@ select   {
 
 /* ── Responsive ── */
 @media (max-width: 1024px) {
-  .footer-grid  { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .values-grid  { grid-template-columns: repeat(2, 1fr); }
-  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid        { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .values-grid        { grid-template-columns: repeat(2, 1fr); }
+  .product-grid       { grid-template-columns: repeat(2, 1fr); }
+  .shop-product-grid  { grid-template-columns: repeat(2, 1fr); }
+  .bones-grid         { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 860px) {
   .snap-grid      { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
@@ -813,13 +956,17 @@ select   {
   .shop-photo-banner-text { padding: 20px 24px; }
 }
 @media (max-width: 768px) {
-  .section      { padding: 72px 0; }
-  .nav-links    { display: none; }
-  .hamburger    { display: flex; }
-  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .footer-grid  { grid-template-columns: 1fr; }
-  .form-grid    { grid-template-columns: 1fr; }
-  .modal        { padding: 28px 20px; }
+  .section            { padding: 72px 0; }
+  .nav-links          { display: none; }
+  .hamburger          { display: flex; }
+  .product-grid       { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .shop-cat-grid      { grid-template-columns: 1fr; }
+  .shop-product-grid  { grid-template-columns: 1fr; }
+  .bones-grid         { grid-template-columns: 1fr; }
+  .shop-cat-card      { padding: 36px 28px; }
+  .footer-grid        { grid-template-columns: 1fr; }
+  .form-grid          { grid-template-columns: 1fr; }
+  .modal              { padding: 28px 20px; }
 }
 @media (max-width: 520px) {
   h1 { font-size: 1.9rem; }

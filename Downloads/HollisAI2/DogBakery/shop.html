@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order a Cake — Happy Dog Barkery & Boutique</title>
-  <meta name="description" content="Order a custom dog birthday cake from Happy Dog Barkery in Stillwater, OK. Fresh baked in-store daily. Choose your size, frosting, and siding." />
+  <title>Shop — Happy Dog Barkery &amp; Boutique</title>
+  <meta name="description" content="Order custom dog birthday cakes and bone cakes from Happy Dog Barkery in Stillwater, OK. Fresh baked in-store. Secure checkout via Square." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -41,148 +41,229 @@
   <div class="page-hero has-photo" style="--hero-img: url('images/IMG_3700.jpeg');">
     <div>
       <span class="eyebrow">Baked Fresh In-Store</span>
-      <h1>Custom Dog Cakes</h1>
-      <p>Made to order, right here in Stillwater. Pick your size, frosting, and siding — we'll handle the rest.</p>
+      <h1>Happy Dog Shop</h1>
+      <p>Custom dog cakes baked fresh in Stillwater. Pick your size, frosting, and siding — we'll handle the rest.</p>
     </div>
   </div>
 
-  <!-- CAKE ORDER SECTION -->
-  <section class="section" style="background: var(--white);">
+  <!-- CATEGORY CARDS -->
+  <section class="section-sm" style="background: var(--white);">
     <div class="container">
-
-      <!-- Success banner -->
-      <div class="form-success-banner" id="cake-success-banner" style="display:none;">
-        <strong id="cake-success-heading">Cake order received!</strong><br>
-        <span id="cake-success-msg">We'll confirm your order via text or email. Please complete payment in the new tab that just opened.</span>
+      <div class="shop-cat-grid">
+        <a href="#cakes-section" class="shop-cat-card fade-up">
+          <span class="shop-cat-icon">🎂</span>
+          <h3 class="shop-cat-title">Cakes</h3>
+          <p class="shop-cat-desc">Custom dog birthday cakes baked fresh in-store. Pick your size, frosting, and siding — made to order, just for your pup.</p>
+          <span class="shop-cat-cta">Order a Cake &rarr;</span>
+        </a>
+        <a href="#bones-section" class="shop-cat-card fade-up">
+          <span class="shop-cat-icon">🦴</span>
+          <h3 class="shop-cat-title">Bones</h3>
+          <p class="shop-cat-desc">Bone-shaped dog cakes perfect for any celebration. Instant secure checkout via Square — no account needed.</p>
+          <span class="shop-cat-cta">Shop Bones &rarr;</span>
+        </a>
       </div>
+    </div>
+  </section>
 
-      <div class="cake-order-layout">
+  <!-- CAKES SECTION -->
+  <section class="section" id="cakes-section" style="background: var(--off-white);">
+    <div class="container">
+      <div class="section-heading center fade-up" style="margin-bottom: 40px;">
+        <span class="eyebrow">Made to Order</span>
+        <h2>&#x1F382; Custom Dog Cakes</h2>
+        <p>Baked fresh right here in Stillwater. Choose your size and we&rsquo;ll craft something your pup will love.</p>
+      </div>
+      <div class="shop-product-grid">
 
-        <!-- Left: info -->
-        <div class="cake-info-col fade-up">
-          <div class="cake-photo-wrap">
-            <img src="images/IMG_3700.jpeg" alt="Custom dog birthday cakes baked at Happy Dog Barkery" />
+        <div class="shop-product-card fade-up">
+          <div class="spc-img">
+            <img src="images/IMG_3703.jpeg" alt="3 inch round dog birthday cake" />
           </div>
-
-          <div class="cake-detail-block">
-            <h3>Sizes &amp; Pricing</h3>
-            <ul class="cake-option-list">
-              <li><span class="cake-opt-name">3&rdquo; Round</span><span class="cake-opt-price">$15</span></li>
-              <li><span class="cake-opt-name">5&rdquo; Round</span><span class="cake-opt-price">$27</span></li>
-              <li><span class="cake-opt-name">Small Bone</span><span class="cake-opt-price">$25</span></li>
-              <li><span class="cake-opt-name">Large Bone</span><span class="cake-opt-price">$35</span></li>
-            </ul>
-          </div>
-
-          <div class="cake-detail-block">
-            <h3>Frosting Flavors</h3>
-            <ul class="cake-option-tags">
-              <li>Peanut Butter</li>
-              <li>Carob</li>
-              <li>Vanilla</li>
-              <li>Custom Color <span style="font-size:0.75rem; opacity:0.7;">(upon request)</span></li>
-            </ul>
-          </div>
-
-          <div class="cake-detail-block">
-            <h3>Siding / Coating</h3>
-            <ul class="cake-option-tags">
-              <li>Peanuts</li>
-              <li>Carob Crumbs</li>
-              <li>Coconut</li>
-            </ul>
-          </div>
-
-          <div class="cake-venmo-notice">
-            <strong>Payment required to confirm.</strong> After submitting your order, you'll be taken to our secure checkout to complete payment. Orders are confirmed once payment is received.
-            <br><span style="font-size:0.85rem; opacity:0.75;">Payment processed securely via Square.</span>
+          <div class="spc-body">
+            <h3 class="spc-name">3&rdquo; Round Cake</h3>
+            <span class="spc-price">$15</span>
+            <p class="spc-desc">Perfect for a pup birthday treat</p>
+            <button class="btn btn-brown" data-cake-key="3in">Order This Cake</button>
           </div>
         </div>
 
-        <!-- Right: form -->
-        <div class="cake-form-col fade-up">
-          <h2 style="margin-bottom:6px;">Place Your Order</h2>
-          <p style="margin-bottom:28px; font-size:0.95rem;">Fill out the form below. We'll confirm via text or email — secure payment via Square locks in your spot.</p>
+        <div class="shop-product-card fade-up">
+          <div class="spc-img">
+            <img src="images/IMG_3703.jpeg" alt="5 inch round dog birthday cake" />
+          </div>
+          <div class="spc-body">
+            <h3 class="spc-name">5&rdquo; Round Cake</h3>
+            <span class="spc-price">$27</span>
+            <p class="spc-desc">Great for a small celebration</p>
+            <button class="btn btn-brown" data-cake-key="5in">Order This Cake</button>
+          </div>
+        </div>
 
-          <form
-            name="cake-order"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            id="cake-form"
-          >
-            <input type="hidden" name="form-name" value="cake-order" />
-            <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <div class="shop-product-card fade-up">
+          <div class="spc-img">
+            <img src="images/IMG_3703.jpeg" alt="Small bone shaped dog cake" />
+          </div>
+          <div class="spc-body">
+            <h3 class="spc-name">Small Bone Cake</h3>
+            <span class="spc-price">$25</span>
+            <p class="spc-desc">Fun bone-shaped cake for any occasion</p>
+            <button class="btn btn-brown" data-cake-key="sbone">Order This Cake</button>
+          </div>
+        </div>
 
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="ck-name">Your Name *</label>
-                <input type="text" id="ck-name" name="name" placeholder="Full name" required />
-              </div>
-              <div class="form-group">
-                <label for="ck-pet">Pet's Name *</label>
-                <input type="text" id="ck-pet" name="pet_name" placeholder="e.g. Biscuit" required />
-              </div>
-              <div class="form-group">
-                <label for="ck-phone">Phone *</label>
-                <input type="tel" id="ck-phone" name="phone" placeholder="(405) 555-0100" required />
-              </div>
-              <div class="form-group">
-                <label for="ck-email">Email *</label>
-                <input type="email" id="ck-email" name="email" placeholder="you@example.com" required />
-              </div>
-              <div class="form-group">
-                <label for="ck-size">Cake Size *</label>
-                <select id="ck-size" name="cake_size" required>
-                  <option value="">Select a size</option>
-                  <option value='3" Round — $15'>3&rdquo; Round &mdash; $15</option>
-                  <option value='5" Round — $27'>5&rdquo; Round &mdash; $27</option>
-                  <option value="Small Bone — $25">Small Bone &mdash; $25</option>
-                  <option value="Large Bone — $35">Large Bone &mdash; $35</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="ck-frosting">Frosting Flavor *</label>
-                <select id="ck-frosting" name="frosting" required>
-                  <option value="">Select frosting</option>
-                  <option value="Peanut Butter">Peanut Butter</option>
-                  <option value="Carob">Carob</option>
-                  <option value="Vanilla">Vanilla</option>
-                  <option value="Custom Color (upon request)">Custom Color (upon request)</option>
-                </select>
-              </div>
-              <div class="form-group full">
-                <label for="ck-siding">Siding / Coating *</label>
-                <select id="ck-siding" name="siding" required>
-                  <option value="">Select siding</option>
-                  <option value="Peanuts">Peanuts</option>
-                  <option value="Carob Crumbs">Carob Crumbs</option>
-                  <option value="Coconut">Coconut</option>
-                </select>
-              </div>
-              <div class="form-group full">
-                <label for="ck-message">Custom Message on Cake</label>
-                <input type="text" id="ck-message" name="cake_message" placeholder="e.g. Happy Birthday Biscuit!" maxlength="60" />
-              </div>
-              <div class="form-group full">
-                <label for="ck-pickup">Preferred Pickup Date &amp; Time *</label>
-                <input type="datetime-local" id="ck-pickup" name="pickup_datetime" required />
-                <span id="ck-pickup-error" style="display:none; color:#c0392b; font-size:0.82rem; font-weight:600; letter-spacing:0; text-transform:none; margin-top:5px;">Please choose a pickup time at least 2 hours from now.</span>
-              </div>
-              <div class="form-group full">
-                <label for="ck-notes">Special Requests / Notes</label>
-                <textarea id="ck-notes" name="notes" placeholder="Allergies, decoration ideas, anything else we should know..." style="min-height:100px;"></textarea>
-              </div>
-              <div class="form-group full form-submit">
-                <button type="submit" class="btn btn-brown" id="cake-submit-btn" style="width:100%; padding:15px; font-size:0.95rem;">Place Cake Order</button>
-              </div>
-            </div>
-          </form>
+        <div class="shop-product-card fade-up">
+          <div class="spc-img">
+            <img src="images/IMG_3703.jpeg" alt="Large bone shaped dog cake" />
+          </div>
+          <div class="spc-body">
+            <h3 class="spc-name">Large Bone Cake</h3>
+            <span class="spc-price">$35</span>
+            <p class="spc-desc">Go big for your best friend&rsquo;s big day</p>
+            <button class="btn btn-brown" data-cake-key="lbone">Order This Cake</button>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- BONES SECTION -->
+  <section class="section" id="bones-section" style="background: var(--white);">
+    <div class="container">
+      <div class="section-heading center fade-up" style="margin-bottom: 32px;">
+        <span class="eyebrow">Instant Checkout</span>
+        <h2>&#x1F9B4; Bone Cakes</h2>
+        <p>Bone-shaped dog cakes perfect for any occasion. Click to buy — secure checkout, no account needed.</p>
+      </div>
+      <p class="bones-secure-note fade-up">&#x1F4B3; Secure checkout via Square &mdash; no account required</p>
+      <div class="bones-grid">
+
+        <div class="bone-card fade-up">
+          <div class="spc-img">
+            <img src="images/IMG_3703.jpeg" alt="Small bone shaped dog cake" />
+          </div>
+          <div class="spc-body">
+            <h3 class="spc-name">Small Bone Cake</h3>
+            <span class="spc-price">$25</span>
+            <p class="spc-desc">A delicious bone-shaped cake, perfect for smaller pups</p>
+            <a href="https://square.link/u/skpMuIfg" target="_blank" rel="noopener" class="btn btn-brown">Buy Now &mdash; $25</a>
+          </div>
+        </div>
+
+        <div class="bone-card fade-up">
+          <div class="spc-img">
+            <img src="images/IMG_3703.jpeg" alt="Large bone shaped dog cake" />
+          </div>
+          <div class="spc-body">
+            <h3 class="spc-name">Large Bone Cake</h3>
+            <span class="spc-price">$35</span>
+            <p class="spc-desc">Go big! Our large bone cake is perfect for big dogs and big celebrations</p>
+            <a href="https://square.link/u/ulN3JrlM" target="_blank" rel="noopener" class="btn btn-brown">Buy Now &mdash; $35</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CAKE ORDER MODAL -->
+  <div class="modal-overlay" id="cake-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cake-modal-title">
+    <div class="modal" style="max-width: 560px;">
+      <button class="modal-close" aria-label="Close">&times;</button>
+
+      <!-- Success state -->
+      <div class="modal-success" id="cake-modal-success" style="display:none;">
+        <div class="success-icon">&#x1F382;</div>
+        <h3 id="cake-success-heading">Order placed!</h3>
+        <p id="cake-success-msg">Complete your payment in the new tab. We&rsquo;ll confirm via text or email.</p>
+        <button class="btn btn-brown modal-close" style="margin-top: 24px;">Done</button>
+      </div>
+
+      <!-- Form state -->
+      <div id="cake-form-wrap">
+        <h3 id="cake-modal-title" style="margin-bottom: 4px;">Place Your Cake Order</h3>
+        <span class="modal-product-name" id="cake-modal-subtitle">Custom Dog Cake</span>
+
+        <form
+          name="cake-order"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          id="cake-form"
+        >
+          <input type="hidden" name="form-name" value="cake-order" />
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="ck-name">Your Name *</label>
+              <input type="text" id="ck-name" name="name" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <label for="ck-pet">Pet&rsquo;s Name *</label>
+              <input type="text" id="ck-pet" name="pet_name" placeholder="e.g. Biscuit" required />
+            </div>
+            <div class="form-group">
+              <label for="ck-phone">Phone *</label>
+              <input type="tel" id="ck-phone" name="phone" placeholder="(405) 555-0100" required />
+            </div>
+            <div class="form-group">
+              <label for="ck-email">Email *</label>
+              <input type="email" id="ck-email" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="ck-size">Cake Size *</label>
+              <select id="ck-size" name="cake_size" required>
+                <option value="">Select a size</option>
+                <option value='3" Round — $15'>3&rdquo; Round &mdash; $15</option>
+                <option value='5" Round — $27'>5&rdquo; Round &mdash; $27</option>
+                <option value="Small Bone — $25">Small Bone &mdash; $25</option>
+                <option value="Large Bone — $35">Large Bone &mdash; $35</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ck-frosting">Frosting Flavor *</label>
+              <select id="ck-frosting" name="frosting" required>
+                <option value="">Select frosting</option>
+                <option value="Peanut Butter">Peanut Butter</option>
+                <option value="Carob">Carob</option>
+                <option value="Vanilla">Vanilla</option>
+                <option value="Custom Color (upon request)">Custom Color (upon request)</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="ck-siding">Siding / Coating *</label>
+              <select id="ck-siding" name="siding" required>
+                <option value="">Select siding</option>
+                <option value="Peanuts">Peanuts</option>
+                <option value="Carob Crumbs">Carob Crumbs</option>
+                <option value="Coconut">Coconut</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="ck-message">Custom Message on Cake</label>
+              <input type="text" id="ck-message" name="cake_message" placeholder="e.g. Happy Birthday Biscuit!" maxlength="60" />
+            </div>
+            <div class="form-group full">
+              <label for="ck-pickup">Preferred Pickup Date &amp; Time *</label>
+              <input type="datetime-local" id="ck-pickup" name="pickup_datetime" required />
+              <span id="ck-pickup-error" style="display:none; color:#c0392b; font-size:0.82rem; font-weight:600; letter-spacing:0; text-transform:none; margin-top:5px;">Please choose a pickup time at least 2 hours from now.</span>
+            </div>
+            <div class="form-group full">
+              <label for="ck-notes">Special Requests / Notes</label>
+              <textarea id="ck-notes" name="notes" placeholder="Allergies, decoration ideas, anything else we should know..." style="min-height:90px;"></textarea>
+            </div>
+            <div class="form-group full form-submit">
+              <button type="submit" class="btn btn-brown" id="cake-submit-btn" style="width:100%; padding:15px; font-size:0.95rem;">Place Cake Order &amp; Pay</button>
+            </div>
+          </div>
+          <p style="font-size:0.78rem; color: var(--text-light); text-align:center; margin-top:12px;">Secure payment via Square. No account required.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -190,7 +271,7 @@
       <div class="footer-grid">
         <div>
           <div class="footer-logo"><img src="images/HappyDog_Logo_White.jpg" alt="Happy Dog Barkery & Boutique" /></div>
-          <p class="footer-brand-text">Stillwater's one stop pup shop. Fresh baked treats, boutique, grooming, and self-wash.</p>
+          <p class="footer-brand-text">Stillwater&rsquo;s one stop pup shop. Fresh baked treats, boutique, grooming, and self-wash.</p>
           <a href="https://www.facebook.com" target="_blank" rel="noopener" class="footer-fb-link">
             <span style="width:18px;height:18px;background:#1877F2;border-radius:3px;display:inline-flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:900;color:#fff;">f</span>
             Facebook
@@ -209,8 +290,8 @@
         <div class="footer-col">
           <h4>Hours</h4>
           <ul>
-            <li>Mon–Sat: 10am – 7pm</li>
-            <li>Sunday: 12pm – 5pm</li>
+            <li>Mon&ndash;Sat: 10am &ndash; 7pm</li>
+            <li>Sunday: 12pm &ndash; 5pm</li>
             <li><a href="tel:+14057142971">(405) 714-2971</a></li>
             <li><a href="mailto:happydogbarkeryboutique@gmail.com" style="word-break:break-all;">happydogbarkeryboutique@gmail.com</a></li>
           </ul>

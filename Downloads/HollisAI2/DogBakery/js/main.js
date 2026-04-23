@@ -48,12 +48,6 @@
     el.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-  function closeOverlay(id) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    el.classList.remove('open');
-    document.body.style.overflow = '';
-  }
   function closeAllModals() {
     document.querySelectorAll('.modal-overlay.open').forEach(el => {
       el.classList.remove('open');
@@ -61,17 +55,47 @@
     document.body.style.overflow = '';
   }
 
-  /* ── Cake order form (inline on shop page) ── */
+  /* ── Cake size key → select value map ── */
+  const cakeSizeMap = {
+    '3in':   '3" Round \u2014 $15',
+    '5in':   '5" Round \u2014 $27',
+    'sbone': 'Small Bone \u2014 $25',
+    'lbone': 'Large Bone \u2014 $35'
+  };
+
+  const squareLinks = {
+    '3" Round \u2014 $15':   'https://square.link/u/T5KVBE4c',
+    '5" Round \u2014 $27':   'https://square.link/u/NO988bn6',
+    'Small Bone \u2014 $25': 'https://square.link/u/skpMuIfg',
+    'Large Bone \u2014 $35': 'https://square.link/u/ulN3JrlM'
+  };
+
+  /* ── Open cake modal with pre-selected size ── */
+  function openCakeModal(sizeValue) {
+    const sizeEl     = document.getElementById('ck-size');
+    const subtitle   = document.getElementById('cake-modal-subtitle');
+    const formWrap   = document.getElementById('cake-form-wrap');
+    const successDiv = document.getElementById('cake-modal-success');
+
+    if (sizeEl)      sizeEl.value              = sizeValue || '';
+    if (subtitle)    subtitle.textContent      = sizeValue || 'Custom Dog Cake';
+    if (formWrap)    formWrap.style.display    = '';
+    if (successDiv)  successDiv.style.display  = 'none';
+
+    openOverlay('cake-modal-overlay');
+  }
+
+  /* ── "Order This Cake" button listeners ── */
+  document.querySelectorAll('[data-cake-key]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      openCakeModal(cakeSizeMap[btn.dataset.cakeKey] || '');
+    });
+  });
+
+  /* ── Cake order form ── */
   const cakeForm    = document.getElementById('cake-form');
   const pickupInput = document.getElementById('ck-pickup');
   const pickupError = document.getElementById('ck-pickup-error');
-
-  const squareLinks = {
-    '3" Round — $15':   'https://square.link/u/T5KVBE4c',
-    '5" Round — $27':   'https://square.link/u/NO988bn6',
-    'Small Bone — $25': 'https://square.link/u/skpMuIfg',
-    'Large Bone — $35': 'https://square.link/u/ulN3JrlM'
-  };
 
   if (cakeForm && pickupInput) {
     function updatePickupMin() {
@@ -95,12 +119,12 @@
       }
       if (pickupError) pickupError.style.display = 'none';
 
-      const petName   = (document.getElementById('ck-pet')  || {}).value || 'your pup';
+      const petName   = (document.getElementById('ck-pet') || {}).value || 'your pup';
       const sizeEl    = document.getElementById('ck-size');
       const cakeSize  = sizeEl ? sizeEl.value : '';
       const squareUrl = squareLinks[cakeSize];
       const submitBtn = document.getElementById('cake-submit-btn');
-      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending\u2026'; }
 
       if (squareUrl) window.open(squareUrl, '_blank');
 
@@ -110,18 +134,20 @@
         body: new URLSearchParams(new FormData(cakeForm)).toString()
       })
         .then(() => {
-          const banner  = document.getElementById('cake-success-banner');
-          const heading = document.getElementById('cake-success-heading');
-          const msg     = document.getElementById('cake-success-msg');
-          if (heading) heading.textContent = `\uD83C\uDF82 Cake order received for ${petName}!`;
-          if (msg) msg.textContent = "We'll confirm your order via text or email. Please complete payment in the new tab that just opened.";
-          if (banner)  { banner.style.display = 'block'; banner.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+          const heading    = document.getElementById('cake-success-heading');
+          const msg        = document.getElementById('cake-success-msg');
+          const formWrap   = document.getElementById('cake-form-wrap');
+          const successDiv = document.getElementById('cake-modal-success');
+          if (heading)    heading.textContent         = '\uD83C\uDF82 Order placed for ' + petName + '!';
+          if (msg)        msg.textContent             = "Complete your payment in the new tab. We\u2019ll confirm via text or email.";
+          if (formWrap)   formWrap.style.display      = 'none';
+          if (successDiv) successDiv.style.display    = 'block';
           cakeForm.reset();
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Place Cake Order'; }
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Place Cake Order & Pay'; }
         })
         .catch(() => {
-          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Place Cake Order'; }
-          alert('Something went wrong — please call us at (405) 714-2971 to place your order.');
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Place Cake Order & Pay'; }
+          alert('Something went wrong \u2014 please call us at (405) 714-2971 to place your order.');
         });
     });
   }
