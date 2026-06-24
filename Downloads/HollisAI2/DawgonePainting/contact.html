@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Dawgone Custom Painting</title>
+  <meta name="description" content="Get in touch with Dawgone Custom Painting in Stillwater, OK. Request a free quote for interior, exterior, or commercial painting." />
+  <meta property="og:title" content="Contact | Dawgone Custom Painting" />
+  <meta property="og:description" content="Request a free quote from Dawgone Custom Painting — Stillwater, OK's trusted painter for over 40 years." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Dawgone Custom Painting — Home">
+        <img src="DawgoneLogo.png" alt="Dawgone Custom Painting" />
+      </a>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="our-work.html">Our Work</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+    <div class="nav__mobile" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="our-work.html">Our Work</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       PAGE HEADER
+       ============================================================ -->
+  <div class="page-header">
+    <h1>Get In Touch</h1>
+    <div class="page-header__accent"></div>
+  </div>
+
+  <!-- ============================================================
+       CONTACT LAYOUT
+       ============================================================ -->
+  <section class="section section--white">
+    <div class="contact-layout">
+
+      <!-- LEFT: Contact Info -->
+      <div class="contact-info">
+        <h2>Let's Talk</h2>
+
+        <div class="contact-detail">
+          <strong>Phone</strong>
+          <a href="tel:+14054083294">(405) 408-3294</a>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Text Us</strong>
+          <a href="sms:+14054083294" class="btn btn-primary" style="display:inline-block; margin-top:0.4rem;">Text Steve</a>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Email</strong>
+          <!-- UPDATE: replace with Steve's actual email address -->
+          <a href="mailto:[steve@example.com]">[Steve's email — update this]</a>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Reviews</strong>
+          <a href="https://www.google.com/search?q=Dawgone+Custom+Painting" target="_blank" rel="noopener" style="font-size:0.95rem; color: var(--orange); font-weight:700;">
+            See Our Google Reviews →
+          </a>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Response Time</strong>
+          <p>We typically respond within 1 business day.</p>
+        </div>
+
+        <div class="contact-detail">
+          <strong>Service Area</strong>
+          <p>Serving Stillwater, OK and surrounding areas.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact Form -->
+      <div class="contact-form-wrap">
+        <h3>Request a Free Quote</h3>
+
+        <!-- Success message — shown when URL contains ?submitted=true -->
+        <div class="form-success" id="form-success">
+          Thanks for reaching out! We'll be in touch within 1 business day to discuss your project.
+        </div>
+
+        <form name="contact" method="POST" data-netlify="true" action="/contact.html?submitted=true">
+          <input type="hidden" name="form-name" value="contact" />
+
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="(405) 555-0100" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="project-type">Project Type</label>
+            <select id="project-type" name="project-type">
+              <option value="">— Select one —</option>
+              <option value="interior">Interior</option>
+              <option value="exterior">Exterior</option>
+              <option value="both">Both</option>
+              <option value="commercial">Commercial</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project — what you need done, timeframe, any questions…"></textarea>
+          </div>
+
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div>
+        <a href="index.html" class="footer__logo">
+          <img src="DawgoneLogo.png" alt="Dawgone Custom Painting" />
+        </a>
+        <p class="footer__tagline">Dawgone Good Work. Every Time.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="our-work.html">Our Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer__contact">
+          <p><a href="tel:+14054083294">(405) 408-3294</a></p>
+          <p>Stillwater, OK</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2025 Dawgone Custom Painting. All rights reserved. Site by <a href="https://novabuildweb.com" target="_blank" rel="noopener" class="footer__novabuild">NovaBuild LLC</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
